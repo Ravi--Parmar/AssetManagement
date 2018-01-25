@@ -1,0 +1,32 @@
+<div class="listview">
+  <table class="table table-striped" >
+    <thead style="text-align :right" >
+      <th>Id</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Created By</th>
+      <th>Created At</th>
+      <th>Updated By</th>
+      <th>Updated At</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let asset of assets">
+        <td>{{asset.id}}</td>
+        <td>{{asset.name}}</td>
+        <td>{{asset.description}}</td>
+        <td>{{asset.status}}</td>
+        <td>{{asset.createdBy}}</td>
+        <td>{{asset.createdDateTime | date :  "medium"}}</td>
+        <td>{{asset.updatedBy}}</td>
+        <td>{{asset.updatedDateTime | date :  "medium"}}</td>
+        <td><button class="btn btn-info" (click)="updateAsset(asset)">edit</button>
+        <button class="btn btn-warning" (click)="deleteAsset(asset)">delete</button></td>
+
+      </tr>
+    </tbody>
+  </table>
+  <td><button class="btn btn-success" (click)="addAsset(asset)">Add Asset</button></td>
+</div>
+
+
